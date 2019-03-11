@@ -9,12 +9,12 @@ Rails.application.routes.draw do
     post '/messages' => 'messages#create'
     get '/messages/:id' => 'messages#show'
     patch '/messages/:id' => 'messages#update'
-    delete '/messages/:id' => 'messages#delete'
+    delete '/messages/:id' => 'messages#destroy'
 
     get '/conversations' => 'conversations#index'
     post '/conversations' => 'conversations#create'
     get '/conversations/:id' => 'conversations#show'
     patch '/conversations/:id' => 'conversations#update'
-    delete '/conversations/:id' => 'conversations#delete'
+    delete '/conversations/:id' => 'conversations#destroy'
   end
 end

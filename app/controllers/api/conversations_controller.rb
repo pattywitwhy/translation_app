@@ -13,7 +13,7 @@ class Api::ConversationsController < ApplicationController
     if @conversation.save
       render 'show.json.jbuilder'
     else
-      render json: { errors: @conversation.errors.full_messages }, status: unprocessable_entity
+      render json: { errors: @conversation.errors.full_messages }, status: :unprocessable_entity
     end
   end
 

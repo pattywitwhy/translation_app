@@ -21,4 +21,10 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
+
+  def authenticate_user
+    unless current_user 
+      render json: {}, status: :unauthorized
+    end
+  end
 end
