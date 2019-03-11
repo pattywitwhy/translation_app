@@ -11,7 +11,8 @@ class Api::UsersController < ApplicationController
                     password: params[:password],
                     password_confirmation: params[:password_confirmation],
                     phone_number: params[:phone_number],
-                    preferred_language: params[:preferred_language]
+                    preferred_language: params[:preferred_language],
+                    conversation_id: params[:conversation_id]
                     )
 
     if @user.save

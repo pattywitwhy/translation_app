@@ -6,8 +6,7 @@ class Api::ConversationsController < ApplicationController
 
   def create
     @conversation = Conversation.new(
-                                    user_id: params[:user_id],
-                                    message_id: params[:message_id]
+                                    starter_id: params[:starter_id]
                                     )
 
     if @conversation.save
@@ -25,8 +24,7 @@ class Api::ConversationsController < ApplicationController
   def update
     @conversation = Conversation.find(params[:id])
 
-    @conversation.user_id = params[:user_id] || @conversation.user_id
-    @conversation.message_id = params[:message_id] || @conversation.message_id
+    @conversation.starter_id = params[:starter_id] || @conversation.starter_id
 
     if @conversation.save
       render 'show.json.jbuilder'

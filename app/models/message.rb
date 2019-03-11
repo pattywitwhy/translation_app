@@ -3,6 +3,9 @@ class Message < ApplicationRecord
   belongs_to :user
   has_many :conversations
 
+  validates :body, length: { maximum: 300}
+
+
   def translate
     translations = {
                      "mom" => "엄마",
@@ -14,7 +17,6 @@ class Message < ApplicationRecord
                      "dinner" => "전역",
                      "work" => "일",
                      "why" => "왜",
-                     "no" => "아니",
                      "again" => "또",
                      "i don't want to" => "씨러",
                      "what are we eating" => "뭐 먹어",
@@ -25,6 +27,7 @@ class Message < ApplicationRecord
                      "what are you doing" => "뭐해",
                      "what is it" => "뭐야",
                      "i don't know" => "몰리",
+                     "no" => "아니",
                      "i love you" => "사랑해"
                     }
 

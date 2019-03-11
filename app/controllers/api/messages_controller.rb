@@ -10,6 +10,7 @@ class Api::MessagesController < ApplicationController
     @message = Message.new(
                             # user_id: current_user.id,
                             user_id: params[:user_id],
+                            conversation_id: params[:conversation_id],
                             body: params[:body]
                           )
 
@@ -31,6 +32,7 @@ class Api::MessagesController < ApplicationController
     @message = Message.find(params[:id])
 
     @message.user_id = params[:user_id] || @message.user_id
+    @message.conversation_id = params[:conversation_id] || @message.conversation_id
     @message.body = params[:body] || @message.body
 
     if @message.save

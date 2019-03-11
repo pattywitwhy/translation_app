@@ -3,8 +3,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_many :messages
-  # has_many :conversations
-
   has_many :conversations, through: :messages
-  
+  has_many :started_conversations, class_name: "Conversation", foreign_key: "starter_id"
 end
