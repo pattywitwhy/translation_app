@@ -4,7 +4,6 @@ class Message < ApplicationRecord
   has_many :conversations
 
   def translate
-
     translations = {
                      "mom" => "엄마",
                      "dad" => "아빠",
@@ -23,8 +22,10 @@ class Message < ApplicationRecord
                      "dad where are you" => "아빠 어디야",
                      "when are you coming" => "언재와",
                      "where are you going" => "어디가",
+                     "what are you doing" => "뭐해",
                      "what is it" => "뭐야",
-                     "i don't know" => "몰리"
+                     "i don't know" => "몰리",
+                     "i love you" => "사랑해"
                     }
 
     translations.each_key do |word|
