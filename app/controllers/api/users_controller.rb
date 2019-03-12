@@ -11,14 +11,29 @@ class Api::UsersController < ApplicationController
                     password: params[:password],
                     password_confirmation: params[:password_confirmation],
                     phone_number: params[:phone_number],
-                    preferred_language: params[:preferred_language],
-                    conversation_id: params[:conversation_id]
+                    preferred_language: params[:preferred_language]
                     )
 
     if @user.save
       render json: { message: "User created successfully" }, status: :created
     else
       render json: { errors: @user.errors.full_messages }, status: :bad_request
+    end
+  end
+
+  def update
+    @user = User.find(params[:id])
+
+    @user.name = params[:name] || @user.name
+    @user.email = params[:email] || @user.email
+    @user.password = params[:password] || @user.password
+    @user.phone_number = params[:phone_number] || @user.phone_number
+    @user.preferred_language = params[:preferred_language] || @user.preferred_language
+
+    if @user.save
+      render 'show.json.jbuilder'
+    else
+      render json: {errors: @user.errors.full_messages}, status: :unprocessable_entity
     end
   end
 end
