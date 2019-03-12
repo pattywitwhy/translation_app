@@ -21,6 +21,11 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    render 'show.json.jbuilder'
+  end
+
   def update
     @user = User.find(params[:id])
 
