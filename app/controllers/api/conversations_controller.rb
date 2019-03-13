@@ -1,13 +1,14 @@
 class Api::ConversationsController < ApplicationController
   def index
-    @conversations = Conversation.all
+    @conversations = current_user.uniq_conversations
+    @started_conversations = current_user.started_conversations
+
     render 'index.json.jbuilder'
   end
 
   def create
     @conversation = Conversation.new(
-                                    starter_id: current_user.id,
-
+                                    starter_id: current_user.id
                                     )
     if @conversation.save
       render 'show.json.jbuilder'

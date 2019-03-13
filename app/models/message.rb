@@ -1,7 +1,7 @@
 class Message < ApplicationRecord
 
   belongs_to :user, optional: true
-  has_many :conversations
+  belongs_to :conversation
 
   validates :body, length: { maximum: 300}
 
