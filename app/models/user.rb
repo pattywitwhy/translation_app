@@ -5,4 +5,8 @@ class User < ApplicationRecord
   has_many :messages
   has_many :conversations, through: :messages
   has_many :started_conversations, class_name: "Conversation", foreign_key: "starter_id"
+
+  def uniq_conversations
+    conversations.uniq
+  end
 end
