@@ -8,7 +8,8 @@ class Api::ConversationsController < ApplicationController
 
   def create
     @conversation = Conversation.new(
-                                    starter_id: current_user.id
+                                    starter_id: current_user.id,
+                                    name: params[:name]
                                     )
     if @conversation.save
       render 'show.json.jbuilder'
@@ -29,6 +30,7 @@ class Api::ConversationsController < ApplicationController
     @conversation = Conversation.find(params[:id])
 
     @conversation.starter_id = params[:starter_id] || @conversation.starter_id
+    @conversation.name = params[:name] || @conversation.name
 
     if @conversation.save
       render 'show.json.jbuilder'

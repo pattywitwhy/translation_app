@@ -17,6 +17,7 @@ class Message < ApplicationRecord
                      "what are you doing" => "뭐해",
                      "what is it" => "뭐야",
                      "i don't know" => "몰리",
+                     "i love you" => "사랑해",
                      "mom" => "엄마",
                      "dad" => "아빠",
                      "Rosa" => "언니",
@@ -28,7 +29,8 @@ class Message < ApplicationRecord
                      "why" => "왜",
                      "again" => "또",
                      "no" => "아니",
-                     "i love you" => "사랑해"
+                     "sure" => "응",
+                     "ok" => "아랐어"
                     }
 
     translations.each_key do |word|
