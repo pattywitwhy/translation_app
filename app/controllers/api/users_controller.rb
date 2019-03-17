@@ -6,6 +6,7 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(
+                    image: params[:image],
                     name: params[:name],
                     email: params[:email],
                     password: params[:password],
@@ -29,6 +30,7 @@ class Api::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
+    @user.image = params[:image] || @user.image
     @user.name = params[:name] || @user.name
     @user.email = params[:email] || @user.email
     @user.password = params[:password] || @user.password

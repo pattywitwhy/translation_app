@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :email, presence: true, uniqueness: true
 
-  belongs_to :conversation
+  # belongs_to :conversation
   has_many :messages
   has_many :invitations
   has_many :conversations, through: :invitations
