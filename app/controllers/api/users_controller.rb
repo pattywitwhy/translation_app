@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
   def index
-    @user = User.all
+    @users = User.all
     render 'index.json.jbuilder'
   end
 

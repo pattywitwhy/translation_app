@@ -1,8 +1,8 @@
 class Api::ConversationsController < ApplicationController
   def index
-    @conversations = current_user.uniq_conversations
-    @started_conversations = current_user.started_conversations
-
+    # @conversations = current_user.conversations
+    # @started_conversations = current_user.started_conversations
+    @conversations = Conversation.all
     render 'index.json.jbuilder'
   end
 
@@ -19,11 +19,8 @@ class Api::ConversationsController < ApplicationController
   end
 
   def show
-
-    # if @conversation.starter_id == current_user.id
-      @conversation = Conversation.find(params[:id])
-      render 'show.json.jbuilder'
-    # end
+    @conversation = Conversation.find(params[:id])
+    render 'show.json.jbuilder'
   end
 
   def update

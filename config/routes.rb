@@ -18,5 +18,9 @@ Rails.application.routes.draw do
     get '/conversations/:id' => 'conversations#show'
     patch '/conversations/:id' => 'conversations#update'
     delete '/conversations/:id' => 'conversations#destroy'
+
+    get '/invitations' => 'invitations#index'
+    delete '/invitations/:id' => 'invitations#destroy'
+
   end
 end
