@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  before_action :authenticate_user
+  before_action :authenticate_user, except: [:index, :show]
 
   def index
     @users = User.all
@@ -35,7 +35,7 @@ class Api::UsersController < ApplicationController
     @user.image = params[:image] || @user.image
     @user.name = params[:name] || @user.name
     @user.email = params[:email] || @user.email
-    @user.password = params[:password] || @user.password
+    # @user.password = params[:password] || @user.password
     @user.phone_number = params[:phone_number] || @user.phone_number
     @user.preferred_language = params[:preferred_language] || @user.preferred_language
 

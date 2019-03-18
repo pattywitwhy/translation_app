@@ -2,10 +2,7 @@ class Api::ConversationsController < ApplicationController
   before_action :authenticate_user, except: [:index, :show]
 
   def index
-    # @conversations = current_user.conversations
-    # @started_conversations = current_user.started_conversations
     @conversations = Conversation.where(starter_id: current_user.id)
-    #this cannot be removed, it breaks the conversation index page
     render 'index.json.jbuilder'
   end
 
@@ -33,8 +30,6 @@ class Api::ConversationsController < ApplicationController
 
   def update
     @conversation = Conversation.find(params[:id])
-
-    # @conversation.starter_id = params[:starter_id] || @conversation.starter_id
     @conversation.name = params[:name] || @conversation.name
 
     if @conversation.starter_id == current_user.id && @conversation.save
