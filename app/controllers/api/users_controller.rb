@@ -30,13 +30,14 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
 
     @user.image = params[:image] || @user.image
     @user.name = params[:name] || @user.name
     @user.email = params[:email] || @user.email
     # @user.password = params[:password] || @user.password
     @user.phone_number = params[:phone_number] || @user.phone_number
+    p @user.preferred_language
     @user.preferred_language = params[:preferred_language] || @user.preferred_language
 
     if @user.save
@@ -44,5 +45,8 @@ class Api::UsersController < ApplicationController
     else
       render json: {errors: @user.errors.full_messages}, status: :unprocessable_entity
     end
+
+    p @user.preferred_language
+    
   end
 end
