@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     delete '/conversations/:id' => 'conversations#destroy'
 
     get '/invitations' => 'invitations#index'
+    post '/invitations' => 'invitations#create'
     delete '/invitations/:id' => 'invitations#destroy'
-
   end
 end

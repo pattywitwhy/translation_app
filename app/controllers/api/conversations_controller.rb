@@ -20,8 +20,9 @@ class Api::ConversationsController < ApplicationController
 
   def show
     @conversation = Conversation.find(params[:id])
+    invited_ids = @conversation.users.pluck(:id)
 
-    if @conversation.starter_id == current_user.id
+    if @conversation.starter_id == current_user.id || invited_ids.include?(current_user.id)
       render 'show.json.jbuilder'
     else
       render json: {}, status: :unauthorized

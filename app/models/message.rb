@@ -2,7 +2,7 @@ class Message < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :conversation
 
-  validates :body, length: { maximum: 300}
+  validates :body, length: { maximum: 300} 
 
 
   def translate
