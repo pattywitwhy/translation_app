@@ -28,7 +28,7 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
     render 'show.json.jbuilder'
   end
-
+3
   def update
     @user = User.find(current_user.id)
 
