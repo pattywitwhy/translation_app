@@ -43,8 +43,7 @@ class Api::ConversationsController < ApplicationController
   def destroy
     conversation = Conversation.find(params[:id])
 
-    if conversation.starter_id == current_user.id
-      conversation.destroy
+    if conversation.starter_id == current_user.id && conversation.destroy
       render json: { message: "Successfully removed conversation" }
     else
       render json: {}, status: :unauthorized
