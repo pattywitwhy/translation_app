@@ -12,6 +12,7 @@ class Api::ConversationsController < ApplicationController
                                     name: params[:name]
                                     )
     if @conversation.save
+      Invitation.create(user_id: params[:user_id], conversation_id: @conversation.id)
       render 'show.json.jbuilder'
     else
       render json: { errors: @conversation.errors.full_messages }, status: :unprocessable_entity

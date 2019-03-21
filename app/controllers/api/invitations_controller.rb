@@ -19,7 +19,3 @@ class Api::InvitationsController < ApplicationController
     render json: {message: "Successfully removed messages"}
   end
 end
-
-
-
- 
