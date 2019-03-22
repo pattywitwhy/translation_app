@@ -14,7 +14,7 @@ class Api::MessagesController < ApplicationController
                             body: params[:body]
                           )
 
-    @message.translate
+    # @message.translate
     
     if @message.save
       render 'show.json.jbuilder'
