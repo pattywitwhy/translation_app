@@ -1,4 +1,4 @@
-require 'http'
+# require 'http'
 
 class Api::MessagesController < ApplicationController
   before_action :authenticate_user
@@ -10,24 +10,23 @@ class Api::MessagesController < ApplicationController
   end
 
   def create
-    message = params[:body]
-    # response = HTTP.get("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20190320T200646Z.834031e5f9a4407a.a488be9050a3cd89d11da5dabafc996b6b3570af&lang=ko&text=#{message}")
+    body = params[:body]
+    response = HTTP.get("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20190320T200646Z.834031e5f9a4407a.a488be9050a3cd89d11da5dabafc996b6b3570af&lang=ko&text=#{ body }")
 
-    # translation = response.parse
-    # body_translation = translation.values[2][0]
+    translation = response.parse
+    body = translation.values[2][0]
+    body
 
     @message = Message.new(
                             user_id: current_user.id,
                             conversation_id: params[:conversation_id],
-                            body: body_translation
+                            body: body
                           )
-    
-    @message.translate
 
     if @message.save
       render 'show.json.jbuilder'
     else
-      render json: {errors: @message.errors.full_messages}, status: :unprocessable_entity
+      render json: {errors: message.errors.full_messages}, status: unprocessable_entity
     end
   end
 

@@ -9,10 +9,22 @@ class Message < ApplicationRecord
 
   def translate
 
-    # response = HTTP.get("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20190320T200646Z.834031e5f9a4407a.a488be9050a3cd89d11da5dabafc996b6b3570af&lang=ko&text=#{message}")
+    # response = HTTP.get("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20190320T200646Z.834031e5f9a4407a.a488be9050a3cd89d11da5dabafc996b6b3570af&lang=ko&text=dad")
+
+    # #{[:body]}
+
+    # puts "*************************************"
 
     # translation = response.parse
-    # body = translation.values[2]
+    # puts "=================================="
+    # p translation
+    # puts "=================================="
+
+    # body = translation.values[2][0]
+    # p body
+    # puts "*************************************"
+    # body
+    # @message.body
 
     # translations = {
     #                  "i don't want to" => "씨러",
@@ -39,6 +51,34 @@ class Message < ApplicationRecord
     #                  "sure" => "응",
     #                  "ok" => "아랐어"
     #                 }
+
+
+
+    # spanish_translations = {
+    #                                          "i don't want to" => "no quiero",
+    #                                          "what are we eating" => "que vamos a comer",
+    #                                          "mom where are you" => "mama donde estas",
+    #                                          "dad where are you" => "papa donde estas",
+    #                                          "when are you coming" => "cuando vas a venir",
+    #                                          "where are you going" => "a donde vas",
+    #                                          "what are you doing" => "que estas haciendo",
+    #                                          "what is it" => "que es",
+    #                                          "i don't know" => "noce",
+    #                                          "i love you" => "te amo",
+    #                                          "mom" => "mama",
+    #                                          "dad" => "papa",
+    #                                          "Rosa" => "Rosa",
+    #                                          "Annie" => "Annie",
+    #                                          "breakfast" => "desayuno",
+    #                                          "lunch" => "almuerzo",
+    #                                          "dinner" => "sena",
+    #                                          "work" => "trabajo",
+    #                                          "why" => "porque",
+    #                                          "again" => "otra ves",
+    #                                          "no" => "no",
+    #                                          "sure" => "claro",
+    #                                          "ok" => "ok"
+    #                        }
 
     # translations.each_key do |word|
     #   body.gsub!(word, translations[word]) if body.include?(word)
