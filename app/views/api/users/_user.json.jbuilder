@@ -1,6 +1,7 @@
 json.id user.id
 
-json.image user.image
+json.image_url rails_blob_url(user.image) if user.image.attachment
+
 json.name user.name
 json.email user.email
 json.password user.password
