@@ -1,3 +1,10 @@
+User.create!([
+  {name: nil, phone_number: nil, email: "mom@gmail.com", preferred_language: nil, password_digest: "$2a$10$efF.KWOQrZzSdSEJXdp7eeXn9JD4886XYVtmY1Drn5W7Mgm25STFG"},
+  {name: "dad", phone_number: nil, email: "dad@gmail.com", preferred_language: nil, password_digest: "$2a$10$.xUqN80OOvmNybRCffzGruMHOeSWrkWuxj8juDghYWJdAzzJABNym"},
+  {name: "rosa", phone_number: nil, email: "rosa@gmail.com", preferred_language: nil, password_digest: "$2a$10$TkIWbQZ2zmKFQGC7/ZRjXe6hx8xsHiJb7tBcCr5DNM8pSOUjf8gzC"},
+  {name: "annie", phone_number: nil, email: "annie@gmail.com", preferred_language: nil, password_digest: "$2a$10$fxBKjewWPI9id4tYYB8KnOtIaaTWyOyVGVevo8qBLqwU9CSoPa0yW"},
+  {name: "Patty Hwang", phone_number: "6108642346", email: "patty@gmail.com", preferred_language: "Korean", password_digest: "$2a$10$od0BK06bXFqoW2DnI3y/HuzilnvR3Pj1bBOE9p9Opv.4i/j3KLAfm"}
+])
 Conversation.create!([
   {starter_id: 1, name: "mom"},
   {starter_id: 1, name: "patty"},
@@ -87,11 +94,4 @@ Message.create!([
   {user_id: nil, body: "BUTTER", translated: nil, read: nil, conversation_id: 1},
   {user_id: nil, body: "BUTTER", translated: nil, read: nil, conversation_id: 1},
   {user_id: nil, body: "BUTTER", translated: nil, read: nil, conversation_id: 1}
-])
-User.create!([
-  {name: nil, phone_number: nil, email: "mom@gmail.com", preferred_language: nil, password_digest: "$2a$10$efF.KWOQrZzSdSEJXdp7eeXn9JD4886XYVtmY1Drn5W7Mgm25STFG"},
-  {name: "dad", phone_number: nil, email: "dad@gmail.com", preferred_language: nil, password_digest: "$2a$10$.xUqN80OOvmNybRCffzGruMHOeSWrkWuxj8juDghYWJdAzzJABNym"},
-  {name: "rosa", phone_number: nil, email: "rosa@gmail.com", preferred_language: nil, password_digest: "$2a$10$TkIWbQZ2zmKFQGC7/ZRjXe6hx8xsHiJb7tBcCr5DNM8pSOUjf8gzC"},
-  {name: "annie", phone_number: nil, email: "annie@gmail.com", preferred_language: nil, password_digest: "$2a$10$fxBKjewWPI9id4tYYB8KnOtIaaTWyOyVGVevo8qBLqwU9CSoPa0yW"},
-  {name: "Patty Hwang", phone_number: "6108642346", email: "patty@gmail.com", preferred_language: "Korean", password_digest: "$2a$10$od0BK06bXFqoW2DnI3y/HuzilnvR3Pj1bBOE9p9Opv.4i/j3KLAfm"}
 ])
