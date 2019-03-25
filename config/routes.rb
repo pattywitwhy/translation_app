@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
     get '/invitations' => 'invitations#index'
     post '/invitations' => 'invitations#create'
+    get '/invitations' => 'invitations#show'
     delete '/invitations/:id' => 'invitations#destroy'
   end
 end
