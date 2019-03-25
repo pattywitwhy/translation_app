@@ -29,17 +29,13 @@ class Api::MessagesController < ApplicationController
     if @message.save
       render 'show.json.jbuilder'
     else
-      render json: {errors: message.errors.full_messages}, status: unprocessable_entity
+      render json: {errors: @message.errors.full_messages}, status: unprocessable_entity
     end
   end
 
   def show
     @message = Message.find(params[:id])
     render 'show.json.jbuilder'
-  end
-
-  def message_params
-    params.require(:message).permit(:content, :conversation_id)
   end
 
   def update
