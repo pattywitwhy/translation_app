@@ -27,9 +27,9 @@ class Api::MessagesController < ApplicationController
                           )
 
     if @message.save
-      ActionCable.server.broadcast 'messages',
-        message: @message.body,
-        user: @message.user.id
+      # ActionCable.server.broadcast 'messages',
+      #   message: @message.body,
+      #   user: @message.user.id
       # head :ok
       render 'show.json.jbuilder'
     else
