@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
-  namespace :api do
-    mount ActionCable.server => '/cable'
-
-    resources :conversations, params: :id
-    resources :messages
-    
+  namespace :api do    
     get '/users' => 'users#index'
     post '/users' => 'users#create'
     get '/users/:id' => 'users#show'
@@ -29,4 +24,6 @@ Rails.application.routes.draw do
     get '/invitations' => 'invitations#show'
     delete '/invitations/:id' => 'invitations#destroy'
   end
+
+  get “/*path” => proc { [200, {}, [ActionView::Base.new.render(file: ‘public/index.html’)]] }
 end
