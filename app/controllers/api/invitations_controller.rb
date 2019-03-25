@@ -12,6 +12,11 @@ class Api::InvitationsController < ApplicationController
     render 'index.json.jbuilder'
   end
 
+  def show
+    @invitation = Invitation.find(params[:id])
+    render 'show.json.jbuilder'
+  end
+
   def destroy
     invitation = Invitation.find(params[:id])
     invitation.destroy

@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   namespace :api do
+    mount ActionCable.server => '/cable'
+
+    resources :conversations, params: :id
+    resources :messages
+    
     get '/users' => 'users#index'
     post '/users' => 'users#create'
     get '/users/:id' => 'users#show'
@@ -21,6 +26,7 @@ Rails.application.routes.draw do
 
     get '/invitations' => 'invitations#index'
     post '/invitations' => 'invitations#create'
+    get '/invitations' => 'invitations#show'
     delete '/invitations/:id' => 'invitations#destroy'
   end
 end
