@@ -13,3 +13,13 @@
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
+
+// = require jquery
+// = require jquery_ujs
+// = require rails-ujs
+// = require vue
+// = require_tree .
+
+// app/assets/javascripts/application.js
+
+// = require_tree ./channels

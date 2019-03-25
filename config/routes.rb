@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   namespace :api do
+    mount ActionCable.server => '/cable'
+
+    resources :conversations, params: :id
+    resources :messages
+    
     get '/users' => 'users#index'
     post '/users' => 'users#create'
     get '/users/:id' => 'users#show'
