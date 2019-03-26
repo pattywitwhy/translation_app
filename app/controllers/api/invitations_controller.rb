@@ -14,6 +14,7 @@ class Api::InvitationsController < ApplicationController
 
   def show
     @invitation = Invitation.find(params[:id])
+    @users = User.all
     render 'show.json.jbuilder'
   end
 
