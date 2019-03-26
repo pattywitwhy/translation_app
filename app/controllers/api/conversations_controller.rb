@@ -2,7 +2,9 @@ class Api::ConversationsController < ApplicationController
   before_action :authenticate_user, except: [:index, :show]
 
   def index
-    @conversations = Conversation.where(starter_id: current_user.id)
+    @started_conversations = current_user.started_conversations
+    @invited_conversations = current_user.conversations
+    
     render 'index.json.jbuilder'
   end
 

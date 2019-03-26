@@ -3,7 +3,7 @@ json.name conversation.name
 
 
 json.users do
-  json.array! conversation.users, partial: 'api/users/user', as: :user
+  json.array! conversation.participants, partial: 'api/users/user', as: :user
 end
 
 json.messages do
