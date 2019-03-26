@@ -28,6 +28,10 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 gem 'seed_dump'
 
+gem 'figaro'
+gem "aws-sdk-s3", require: false
+
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -54,5 +58,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'http'
 gem 'rack-cors'
 
-gem 'vuejs-rails'
-gem 'jquery-rails'
+# gem 'vuejs-rails'
+# gem 'jquery-rails'
