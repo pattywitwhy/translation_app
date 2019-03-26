@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(
-                    # image: params[:image],
+                    image: params[:image],
                     name: params[:name],
                     email: params[:email],
                     password: params[:password],

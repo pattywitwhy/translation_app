@@ -3,8 +3,6 @@ class User < ApplicationRecord
   validates :email, presence: true
   # , uniqueness: true
 
-  # belongs_to :conversation
-  has_one_attached :image
   has_many :messages
   has_many :invitations
   has_many :conversations, through: :invitations
