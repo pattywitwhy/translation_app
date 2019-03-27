@@ -7,13 +7,13 @@ User.create!([
   {name: "Dad", phone_number: nil, email: "dad@gmail.com", preferred_language: nil, password_digest: "$2a$10$.xUqN80OOvmNybRCffzGruMHOeSWrkWuxj8juDghYWJdAzzJABNym", image: "/profile_pics/dad.png"},
   {name: "Annie", phone_number: nil, email: "annie@gmail.com", preferred_language: nil, password_digest: "$2a$10$fxBKjewWPI9id4tYYB8KnOtIaaTWyOyVGVevo8qBLqwU9CSoPa0yW", image: "/profile_pics/annie.png"}
 ])
-Conversation.create!([
-  {starter_id: 1, name: "Cat Talks"}
-])
-Invitation.create!([
-  {conversation_id: 416, user_id: 4}
-])
-Message.create!([
-  {user_id: 1, body: "옹", translated: nil, read: nil, conversation_id: 416},
-  {user_id: 4, body: "woof woof", translated: nil, read: nil, conversation_id: 416}
-])
+# Conversation.create!([
+#   {starter_id: 1, name: "Cat Talks"}
+# ])
+# Invitation.create!([
+#   {conversation_id: 416, user_id: 4}
+# ])
+# Message.create!([
+#   {user_id: 1, body: "옹", translated: nil, read: nil, conversation_id: 416},
+#   {user_id: 4, body: "woof woof", translated: nil, read: nil, conversation_id: 416}
+# ])
