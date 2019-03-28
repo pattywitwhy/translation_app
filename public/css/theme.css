@@ -1,11 +1,7 @@
 /* line 12, ../sass/_type.sass */
-body {
-  background-image: url('../css/crossword.png');
-  line-height: 1.65;
-}
+
 
 /* line 15, ../sass/_type.sass */
-body,
 button,
 input,
 select,
