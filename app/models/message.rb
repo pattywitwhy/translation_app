@@ -39,4 +39,21 @@ class Message < ApplicationRecord
     #   body.gsub!(word, translations[word]) if body.include?(word)
     # end
   end
+
+  def language_key
+      code = {
+                "English" => "en",
+                "Korean" => "ko",
+                "Vietnamese" => "vi",
+                "Italian" => "it",,
+                "Chinese" => "zh",
+                "Spanish" => "es",
+                "Japanese" => "ja",
+                "French" => "fr",
+                "Slovakian" => "sk",
+                "Russian" => "ru",
+                "German" => "de",
+                "Polish" => "pl"
+      }
+  end
 end
