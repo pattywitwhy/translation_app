@@ -1,8 +1,5 @@
-# require 'http'
-
 class Api::MessagesController < ApplicationController
   before_action :authenticate_user
-  # , except: [:index, :show]
 
   def index
     @messages = current_user.messages 
@@ -13,7 +10,7 @@ class Api::MessagesController < ApplicationController
 
     body = params[:body]
     lang = params[:lang]
-    response = HTTP.get("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20190320T200646Z.834031e5f9a4407a.a488be9050a3cd89d11da5dabafc996b6b3570af&lang=#{ lang }&text=#{ body }")
+    response = HTTP.get("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20190320T200646Z.834031e5f9a4407a.a488be9050a3cd89d11da5dabafc996b6b3570af&lang=ko&text=#{ body }")
 
     translation = response.parse
     body = translation.values[2][0]
@@ -22,8 +19,7 @@ class Api::MessagesController < ApplicationController
     @message = Message.new(
                             user_id: current_user.id,
                             conversation_id: params[:conversation_id],
-                            body: body,
-                            language: lang
+                            body: body
                           )
 
     if @message.save
