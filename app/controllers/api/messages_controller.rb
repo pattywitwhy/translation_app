@@ -9,7 +9,7 @@ class Api::MessagesController < ApplicationController
   def create
 
     body = params[:body]
-    lang = params[:lang]
+    # lang = params[:lang]
     response = HTTP.get("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20190320T200646Z.834031e5f9a4407a.a488be9050a3cd89d11da5dabafc996b6b3570af&lang=ko&text=#{ body }")
 
     translation = response.parse
@@ -27,7 +27,7 @@ class Api::MessagesController < ApplicationController
     else
       render json: {errors: @message.errors.full_messages}, status: unprocessable_entity
     end
-  end
+  endh
 
   def show
     @message = Message.find(params[:id])

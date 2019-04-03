@@ -7,7 +7,7 @@ class Message < ApplicationRecord
   validates :body, length: { maximum: 300} 
 
 
-  def translate
+  # def translate
 
     # translations = {
     #                  "i don't want to" => "씨러",
@@ -38,22 +38,22 @@ class Message < ApplicationRecord
     # translations.each_key do |word|
     #   body.gsub!(word, translations[word]) if body.include?(word)
     # end
-  end
+  # end
 
-  def language_key
-      code = {
-                "English" => "en",
-                "Korean" => "ko",
-                "Vietnamese" => "vi",
-                "Italian" => "it",,
-                "Chinese" => "zh",
-                "Spanish" => "es",
-                "Japanese" => "ja",
-                "French" => "fr",
-                "Slovakian" => "sk",
-                "Russian" => "ru",
-                "German" => "de",
-                "Polish" => "pl"
-      }
-  end
+  # def language_key
+  #     code = {
+  #               "English" => "en",
+  #               "Korean" => "ko",
+  #               "Vietnamese" => "vi",
+  #               "Italian" => "it",,
+  #               "Chinese" => "zh",
+  #               "Spanish" => "es",
+  #               "Japanese" => "ja",
+  #               "French" => "fr",
+  #               "Slovakian" => "sk",
+  #               "Russian" => "ru",
+  #               "German" => "de",
+  #               "Polish" => "pl"
+  #     }
+  # end
 end
