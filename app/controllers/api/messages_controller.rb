@@ -27,7 +27,7 @@ class Api::MessagesController < ApplicationController
     else
       render json: {errors: @message.errors.full_messages}, status: unprocessable_entity
     end
-  endh
+  end
 
   def show
     @message = Message.find(params[:id])
@@ -56,6 +56,5 @@ class Api::MessagesController < ApplicationController
     else
       render json: {}, status: :unauthorized
     end
-
   end
 end
